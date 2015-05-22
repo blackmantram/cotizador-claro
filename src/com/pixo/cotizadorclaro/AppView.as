@@ -1,5 +1,7 @@
 package com.pixo.cotizadorclaro
 {
+	import assets.skins.AppSkins;
+	
 	import com.pixo.cotizadorclaro.view.LoginView;
 	
 	import flash.display.DisplayObject;
@@ -7,12 +9,18 @@ package com.pixo.cotizadorclaro
 	
 	public class AppView extends Sprite
 	{
+		private var container:Sprite;
+		
 		private var login:DisplayObject;	
 		
 		public function AppView()
-		{trace("hijo!");
+		{
+			var skin:Sprite = new AppSkins.MainSkin() as Sprite;
+			addChild(skin);
+			container = skin.getChildByName("content") as Sprite;
+			
 			login = new LoginView();
-			addChild(login);
+			container.addChild(login);
 		}
 	}
 }
