@@ -9,11 +9,14 @@ package com.pixo.cotizadorclaro.view
 	
 	public class TvView extends Slider
 	{
+		[Skinnable]
+		public var channels:Sprite;
+		
 		private var _skin:Sprite;
 		
 		public function TvView()
 		{
-			
+			channels.visible = false;
 		}
 		
 		protected override function get skin():Sprite

@@ -27,7 +27,7 @@ package assets.skins
 		public static var Tv_Deco:Class;
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="tv_channel")]
-		public static var Tv_Cannel:Class;
+		public static var Tv_Channel:Class;
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="internet")]
 		public static var Internet:Class;

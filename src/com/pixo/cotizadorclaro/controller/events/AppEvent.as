@@ -9,7 +9,11 @@ package com.pixo.cotizadorclaro.controller.events
 		public static const GO_TO_STRATUM:String = "AppEvent.CITY_SELECTED";
 		public static const GO_TO_TRIPLE_PLAY:String = "AppEvent.GO_TO_TRIPLE_PLAY";
 		public static const GO_TO_SERVICES:String = "AppEvent.GO_TO_SERVICES";
-		public static const START_ESTIMATION:String = "AppEvent.START_ESTIMATION";
+		public static const GO_TO_TV:String = "AppEvent.GO_TO_TV";
+		public static const GO_TO_TV_DECO:String = "AppEvent.GO_TO_TV_DECO";
+		public static const GO_TO_TV_CHANNEL:String = "AppEvent.GO_TO_TV_CHANNEL";
+		public static const GO_TO_INTERNET:String = "AppEvent.GO_TO_INTERNET";
+		public static const GO_TO_PHONE:String = "AppEvent.GO_TO_PHONE";
 		
 		/**
 		 *	@constructor

@@ -3,10 +3,15 @@ package com.pixo.cotizadorclaro
 	import assets.skins.AppSkins;
 	
 	import com.pixo.cotizadorclaro.view.CityView;
+	import com.pixo.cotizadorclaro.view.InternetView;
 	import com.pixo.cotizadorclaro.view.LoginView;
+	import com.pixo.cotizadorclaro.view.PhoneView;
 	import com.pixo.cotizadorclaro.view.ServicesView;
 	import com.pixo.cotizadorclaro.view.StratumView;
 	import com.pixo.cotizadorclaro.view.TriplePlayView;
+	import com.pixo.cotizadorclaro.view.TvChannelView;
+	import com.pixo.cotizadorclaro.view.TvDecoView;
+	import com.pixo.cotizadorclaro.view.TvView;
 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
@@ -20,6 +25,11 @@ package com.pixo.cotizadorclaro
 		private var _stratum:StratumView;
 		private var _tripleplay:TriplePlayView;
 		private var _services:ServicesView;
+		private var _tv:TvView;
+		private var _tvdeco:TvDecoView;
+		private var _tvchannel:TvChannelView;
+		private var _int:InternetView;
+		private var _pho:PhoneView;
 		
 		private var activeView:DisplayObject;
 		
@@ -53,6 +63,36 @@ package com.pixo.cotizadorclaro
 			return _services;
 		}
 		
+		private function get tv():TvView
+		{
+			if (_tv == null) _tv=new TvView(); 
+			return _tv;
+		}
+		
+		private function get tvdeco():TvDecoView
+		{
+			if (_tvdeco == null) _tvdeco=new TvDecoView(); 
+			return _tvdeco;
+		}
+		
+		private function get tvchannel():TvChannelView
+		{
+			if (_tvchannel == null) _tvchannel=new TvChannelView(); 
+			return _tvchannel;
+		}
+		
+		private function get internet():InternetView
+		{
+			if (_int == null) _int=new InternetView(); 
+			return _int;
+		}
+		
+		private function get phone():PhoneView
+		{
+			if (_pho == null) _pho=new PhoneView(); 
+			return _pho;
+		}
+		
 		public function AppView()
 		{
 			var skin:Sprite = new AppSkins.MainSkin() as Sprite;
@@ -80,6 +120,31 @@ package com.pixo.cotizadorclaro
 		public function showServices():void
 		{
 			addView(services);
+		}
+		
+		public function showTv():void
+		{
+			addView(tv);
+		}
+		
+		public function showTvDeco():void
+		{
+			addView(tvdeco);
+		}
+		
+		public function showTvChannel():void
+		{
+			addView(tvchannel);
+		}
+		
+		public function showInternet():void
+		{
+			addView(internet);
+		}
+		
+		public function showPhone():void
+		{
+			addView(phone);
 		}
 		
 		private function addView(view:DisplayObject):void

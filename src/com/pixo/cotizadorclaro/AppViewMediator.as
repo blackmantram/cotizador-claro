@@ -17,6 +17,11 @@ package com.pixo.cotizadorclaro
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_STRATUM, handleCitySelected);
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_TRIPLE_PLAY, handleTriplePlaySelected);
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_SERVICES, handleServicesSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_TV, handleTvSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_TV_DECO, handleTvDecoSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_TV_CHANNEL, handleTvChannelSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_INTERNET, handleInternetSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_PHONE, handlePhoneSelected);
 		}
 		
 		private function handleLoginSuccessful(e:AppEvent):void
@@ -37,6 +42,31 @@ package com.pixo.cotizadorclaro
 		private function handleServicesSelected(e:AppEvent):void
 		{
 			view.showServices();
+		}
+		
+		private function handleTvSelected(e:AppEvent):void
+		{
+			view.showTv();
+		}
+		
+		private function handleTvDecoSelected(e:AppEvent):void
+		{
+			view.showTvDeco();
+		}
+		
+		private function handleTvChannelSelected(e:AppEvent):void
+		{
+			view.showTvChannel();
+		}
+		
+		private function handleInternetSelected(e:AppEvent):void
+		{
+			view.showInternet();
+		}
+		
+		private function handlePhoneSelected(e:AppEvent):void
+		{
+			view.showPhone();
 		}
 	}
 }

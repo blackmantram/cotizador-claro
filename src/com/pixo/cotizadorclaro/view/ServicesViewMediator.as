@@ -19,7 +19,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleNextButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.START_ESTIMATION));
+			dispatch(new AppEvent(AppEvent.GO_TO_TV));
 		}
 		
 		private function handlePrevButton(e:MouseEvent):void

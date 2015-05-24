@@ -10,7 +10,7 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		public function TvView()
+		public function TvDecoView()
 		{
 			
 		}
