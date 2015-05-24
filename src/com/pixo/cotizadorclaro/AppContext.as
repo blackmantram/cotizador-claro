@@ -1,5 +1,6 @@
 package com.pixo.cotizadorclaro
 {
+	import com.pixo.cotizadorclaro.controller.commands.StartApp;
 	import com.pixo.cotizadorclaro.controller.commands.boostrap.BootsrapAppStartup;
 	
 	import flash.display.DisplayObjectContainer;
@@ -17,6 +18,7 @@ package com.pixo.cotizadorclaro
 		override public function startup():void
 		{
 			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, BootsrapAppStartup, ContextEvent, true);
+			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, StartApp, ContextEvent, true);
 			super.startup();
 		}
 	}

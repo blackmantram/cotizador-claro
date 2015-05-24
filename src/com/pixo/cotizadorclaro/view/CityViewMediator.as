@@ -6,19 +6,19 @@ package com.pixo.cotizadorclaro.view
 	
 	import org.robotlegs.mvcs.Mediator;
 	
-	public class LoginViewMediator extends Mediator
+	public class CityViewMediator extends Mediator
 	{
 		[Inject]
-		public var view:LoginView;
+		public var view:CityView;
 		
 		override public function onRegister():void
 		{
-			eventMap.mapListener(view.loginButton, MouseEvent.CLICK, handleLogin);
+			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 		}
 		
-		private function handleLogin(e:MouseEvent):void
+		private function handleNextButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_CITY));
+			dispatch(new AppEvent(AppEvent.GO_TO_STRATUM));
 		}
 	}
 }
