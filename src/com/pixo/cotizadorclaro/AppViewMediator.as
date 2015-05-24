@@ -22,6 +22,8 @@ package com.pixo.cotizadorclaro
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_TV_CHANNEL, handleTvChannelSelected);
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_INTERNET, handleInternetSelected);
 			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_PHONE, handlePhoneSelected);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_PREVIEW, handlePreview);
+			eventMap.mapListener(eventDispatcher, AppEvent.GO_TO_REGISTRY, handleRegistry);
 		}
 		
 		private function handleLoginSuccessful(e:AppEvent):void
@@ -67,6 +69,16 @@ package com.pixo.cotizadorclaro
 		private function handlePhoneSelected(e:AppEvent):void
 		{
 			view.showPhone();
+		}
+		
+		private function handlePreview(e:AppEvent):void
+		{
+			view.showPreview();
+		}
+		
+		private function handleRegistry(e:AppEvent):void
+		{
+			view.showRegistry();
 		}
 	}
 }

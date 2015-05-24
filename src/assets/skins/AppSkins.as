@@ -34,5 +34,11 @@ package assets.skins
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="phone")]
 		public static var Phone:Class;
+		
+		[Embed(source="cotizador/AppSkins.swf", symbol="registry")]
+		public static var Registry:Class;
+		
+		[Embed(source="cotizador/AppSkins.swf", symbol="preview")]
+		public static var Preview:Class;
 	}
 }

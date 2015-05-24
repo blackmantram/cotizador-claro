@@ -14,6 +14,8 @@ package com.pixo.cotizadorclaro.controller.events
 		public static const GO_TO_TV_CHANNEL:String = "AppEvent.GO_TO_TV_CHANNEL";
 		public static const GO_TO_INTERNET:String = "AppEvent.GO_TO_INTERNET";
 		public static const GO_TO_PHONE:String = "AppEvent.GO_TO_PHONE";
+		public static const GO_TO_PREVIEW:String = "AppEvent.GO_TO_PREVIEW";
+		public static const GO_TO_REGISTRY:String = "AppEvent.GO_TO_REGISTRY";
 		
 		/**
 		 *	@constructor

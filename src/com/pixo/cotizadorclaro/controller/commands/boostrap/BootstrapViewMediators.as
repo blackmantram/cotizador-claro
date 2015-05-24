@@ -10,6 +10,10 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 	import com.pixo.cotizadorclaro.view.LoginViewMediator;
 	import com.pixo.cotizadorclaro.view.PhoneView;
 	import com.pixo.cotizadorclaro.view.PhoneViewMediator;
+	import com.pixo.cotizadorclaro.view.PreviewView;
+	import com.pixo.cotizadorclaro.view.PreviewViewMediator;
+	import com.pixo.cotizadorclaro.view.RegistryView;
+	import com.pixo.cotizadorclaro.view.RegistryViewMediator;
 	import com.pixo.cotizadorclaro.view.ServicesView;
 	import com.pixo.cotizadorclaro.view.ServicesViewMediator;
 	import com.pixo.cotizadorclaro.view.StratumView;
@@ -41,6 +45,8 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 			mediatorMap.mapView(TvChannelView, TvChannelViewMediator);
 			mediatorMap.mapView(InternetView, InternetViewMediator);
 			mediatorMap.mapView(PhoneView, PhoneViewMediator);
+			mediatorMap.mapView(PreviewView, PreviewViewMediator);
+			mediatorMap.mapView(RegistryView, RegistryViewMediator);
 		}
 	
 	}

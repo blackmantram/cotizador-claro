@@ -19,7 +19,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleNextButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_PHONE));
+			dispatch(new AppEvent(AppEvent.GO_TO_PREVIEW));
 		}
 		
 		private function handlePrevButton(e:MouseEvent):void

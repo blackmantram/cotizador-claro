@@ -6,6 +6,8 @@ package com.pixo.cotizadorclaro
 	import com.pixo.cotizadorclaro.view.InternetView;
 	import com.pixo.cotizadorclaro.view.LoginView;
 	import com.pixo.cotizadorclaro.view.PhoneView;
+	import com.pixo.cotizadorclaro.view.PreviewView;
+	import com.pixo.cotizadorclaro.view.RegistryView;
 	import com.pixo.cotizadorclaro.view.ServicesView;
 	import com.pixo.cotizadorclaro.view.StratumView;
 	import com.pixo.cotizadorclaro.view.TriplePlayView;
@@ -30,6 +32,8 @@ package com.pixo.cotizadorclaro
 		private var _tvchannel:TvChannelView;
 		private var _int:InternetView;
 		private var _pho:PhoneView;
+		private var _preview:PreviewView;
+		private var _registry:RegistryView;
 		
 		private var activeView:DisplayObject;
 		
@@ -93,6 +97,18 @@ package com.pixo.cotizadorclaro
 			return _pho;
 		}
 		
+		private function get preview():PreviewView
+		{
+			if (_preview == null) _preview=new PreviewView(); 
+			return _preview;
+		}
+		
+		private function get registry():RegistryView
+		{
+			if (_registry == null) _registry=new RegistryView(); 
+			return _registry;
+		}
+		
 		public function AppView()
 		{
 			var skin:Sprite = new AppSkins.MainSkin() as Sprite;
@@ -145,6 +161,16 @@ package com.pixo.cotizadorclaro
 		public function showPhone():void
 		{
 			addView(phone);
+		}
+		
+		public function showPreview():void
+		{
+			addView(preview);
+		}
+		
+		public function showRegistry():void
+		{
+			addView(registry);
 		}
 		
 		private function addView(view:DisplayObject):void
