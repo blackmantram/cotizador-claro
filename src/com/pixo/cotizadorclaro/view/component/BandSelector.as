@@ -1,5 +1,6 @@
 package com.pixo.cotizadorclaro.view.component
 {
+	import com.pixo.cotizadorclaro.model.Config;
 	import com.pixo.cotizadorclaro.view.base.ButtonListSelector;
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	
@@ -15,10 +16,10 @@ package com.pixo.cotizadorclaro.view.component
 		protected override function initializeButtonList(skin:Sprite):Vector.<SelectableButton>
 		{
 			return new <SelectableButton>[
-				new SelectableButton(skin.getChildByName("int20") as Sprite, "20"), 
-				new SelectableButton(skin.getChildByName("int10") as Sprite, "10"),
-				new SelectableButton(skin.getChildByName("int5") as Sprite, "5"),
-				new SelectableButton(skin.getChildByName("int3") as Sprite, "3")
+				new SelectableButton(skin.getChildByName("int20") as Sprite, Config.INTERNET_20), 
+				new SelectableButton(skin.getChildByName("int10") as Sprite, Config.INTERNET_10),
+				new SelectableButton(skin.getChildByName("int5") as Sprite, Config.INTERNET_5),
+				new SelectableButton(skin.getChildByName("int3") as Sprite, Config.INTERNET_3)
 			];
 		}
 	}

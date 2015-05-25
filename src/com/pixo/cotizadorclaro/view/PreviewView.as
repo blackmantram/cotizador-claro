@@ -2,6 +2,8 @@ package com.pixo.cotizadorclaro.view
 {
 	import assets.skins.AppSkins;
 	
+	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.model.CostCalculator;
 	import com.pixo.cotizadorclaro.view.base.SkinnableView;
 	import com.pixo.cotizadorclaro.view.component.SelectedItems;
 	
@@ -34,6 +36,18 @@ package com.pixo.cotizadorclaro.view
 		[Skinnable]
 		public var stratum:TextField;
 		
+		[Skinnable]
+		public var tvTotal:TextField;
+		
+		[Skinnable]
+		public var internetTotal:TextField;
+		
+		[Skinnable]
+		public var phoneTotal:TextField;
+		
+		[Skinnable]
+		public var grandTotal:TextField;
+		
 		private var _skin:Sprite;
 		
 		public function PreviewView()
@@ -47,6 +61,22 @@ package com.pixo.cotizadorclaro.view
 		{
 			if (_skin == null) _skin = new AppSkins.Preview() as Sprite;
 			return _skin;
+		}
+		
+		public function setData(config:Config):void
+		{
+			selectedItems.setData(config);
+			stratum.text = config.stratum+"";
+			calculate(config);
+		}
+		
+		private function calculate(config:Config):void
+		{
+			var calculator:CostCalculator = new CostCalculator(config);
+			tvTotal.text = calculator.tvTotal+"";
+			internetTotal.text = calculator.internetTotal+"";
+			phoneTotal.text = calculator.phoneTotal+"";
+			grandTotal.text = calculator.grandTotal+"";
 		}
 	}
 }

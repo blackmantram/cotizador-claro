@@ -24,6 +24,7 @@ package com.pixo.cotizadorclaro.model
 		public var tv:Boolean = false;
 		public var internet:Boolean = false;
 		public var phone:Boolean = false;
+		
 		public var tvplan:String = "";
 		public var decoPVR:Number = 0;
 		public var decoHD:Number = 0;
@@ -33,7 +34,9 @@ package com.pixo.cotizadorclaro.model
 		public var fox:Boolean = false;
 		public var hotPack:Boolean = false;
 		public var revista15:Boolean = false;
+		
 		public var internetplan:String = "";
+		
 		public var phonelines:String = "";
 		
 		public function get isTriplePlaySelected():Boolean

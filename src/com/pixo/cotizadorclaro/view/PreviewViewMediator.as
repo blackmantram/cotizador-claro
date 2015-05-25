@@ -22,8 +22,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.tv, MouseEvent.CLICK, handleTvButton);
 			eventMap.mapListener(view.internet, MouseEvent.CLICK, handleInternetButton);
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
-			view.selectedItems.setData(config);
-			view.stratum.text = config.stratum+"";
+			view.setData(config);
 		}
 		
 		private function handleRegistryButton(e:MouseEvent):void
