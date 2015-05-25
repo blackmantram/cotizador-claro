@@ -2,6 +2,7 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 {
 	
 	import com.pixo.cotizadorclaro.controller.commands.InternetSelected;
+	import com.pixo.cotizadorclaro.controller.commands.JumpNav;
 	import com.pixo.cotizadorclaro.controller.commands.NextNav;
 	import com.pixo.cotizadorclaro.controller.commands.PhoneSelected;
 	import com.pixo.cotizadorclaro.controller.commands.PrevNav;
@@ -23,6 +24,7 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 			
 			commandMap.mapEvent(NavEvent.NEXT, NextNav);
 			commandMap.mapEvent(NavEvent.PREV, PrevNav);
+			commandMap.mapEvent(NavEvent.JUMP, JumpNav, NavEvent);
 			/*commandMap.mapEvent(SettingsEvent.MATCH_SETTINGS_CHANGED, UpdateMatchSettingsCommant, SettingsEvent);
 			commandMap.mapEvent(SettingsEvent.TEAM_SETTINGS_CHANGED, UpdateTeamSettingsCommand, SettingsEvent);
 			

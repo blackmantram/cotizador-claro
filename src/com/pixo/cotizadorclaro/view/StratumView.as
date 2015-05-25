@@ -11,7 +11,7 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var stratumSelector:NumberSelector;
+		public var stratumSelector:NumberSelector;
 		
 		
 		public function StratumView()

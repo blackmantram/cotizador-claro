@@ -49,6 +49,13 @@ package com.pixo.cotizadorclaro.model
 			return new AppEvent(currentNavString);
 		}
 		
+		public function Jump(nav:String):void
+		{
+			prevNav = currentNav;
+			currentNav = GetNavPositionOf(nav);
+			currentNavString = orderedNavEvents[currentNav];
+		}
+		
 		private function calcNextEvent():void
 		{
 			prevNav = currentNav;
@@ -91,6 +98,8 @@ package com.pixo.cotizadorclaro.model
 					currentNav=GetNavPositionOf(AppEvent.GO_TO_INTERNET);
 				else if (selectedItems.phone)
 					currentNav=GetNavPositionOf(AppEvent.GO_TO_PHONE);
+				else
+					currentNav=GetNavPositionOf(AppEvent.GO_TO_PREVIEW);
 			}
 			else if (isIn(AppEvent.GO_TO_INTERNET))
 			{

@@ -2,6 +2,7 @@ package com.pixo.cotizadorclaro.view
 {
 	import com.pixo.cotizadorclaro.controller.events.AppEvent;
 	import com.pixo.cotizadorclaro.controller.events.NavEvent;
+	import com.pixo.cotizadorclaro.model.Config;
 	
 	import flash.events.MouseEvent;
 	
@@ -12,12 +13,17 @@ package com.pixo.cotizadorclaro.view
 		[Inject]
 		public var view:PreviewView;
 		
+		[Inject]
+		public var config:Config;
+		
 		override public function onRegister():void
 		{
 			eventMap.mapListener(view.registry, MouseEvent.CLICK, handleRegistryButton);
 			eventMap.mapListener(view.tv, MouseEvent.CLICK, handleTvButton);
 			eventMap.mapListener(view.internet, MouseEvent.CLICK, handleInternetButton);
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
+			view.selectedItems.setData(config);
+			view.stratum.text = config.stratum+"";
 		}
 		
 		private function handleRegistryButton(e:MouseEvent):void
@@ -27,17 +33,17 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleTvButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_TV));
+			dispatch(new NavEvent(NavEvent.JUMP, AppEvent.GO_TO_TV));
 		}
 		
 		private function handleInternetButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_INTERNET));
+			dispatch(new NavEvent(NavEvent.JUMP, AppEvent.GO_TO_INTERNET));
 		}
 		
 		private function handlePhoneButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_PHONE));
+			dispatch(new NavEvent(NavEvent.JUMP, AppEvent.GO_TO_PHONE));
 		}
 	}
 }

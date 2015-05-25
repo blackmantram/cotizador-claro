@@ -2,7 +2,9 @@ package com.pixo.cotizadorclaro.view
 {
 	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
 	import org.robotlegs.mvcs.Mediator;
@@ -19,11 +21,11 @@ package com.pixo.cotizadorclaro.view
 		{
 			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
-			eventMap.mapListener(view.hbo, MouseEvent.CLICK, handleHBOSelected);
-			eventMap.mapListener(view.minihbo, MouseEvent.CLICK, handleMiniHBOSelected);
-			eventMap.mapListener(view.fox, MouseEvent.CLICK, handleFoxSelected);
-			eventMap.mapListener(view.hotPack, MouseEvent.CLICK, handleHotPackSelected);
-			eventMap.mapListener(view.revista15, MouseEvent.CLICK, handleRevista15Selected);
+			eventMap.mapListener(view.hbo, SelectableButton.SELECTED, handleHBOSelected);
+			eventMap.mapListener(view.minihbo, SelectableButton.SELECTED, handleMiniHBOSelected);
+			eventMap.mapListener(view.fox, SelectableButton.SELECTED, handleFoxSelected);
+			eventMap.mapListener(view.hotPack, SelectableButton.SELECTED, handleHotPackSelected);
+			eventMap.mapListener(view.revista15, SelectableButton.SELECTED, handleRevista15Selected);
 		}
 		
 		private function handleNextButton(e:MouseEvent):void
@@ -36,27 +38,27 @@ package com.pixo.cotizadorclaro.view
 			dispatch(new NavEvent(NavEvent.PREV));
 		}
 		
-		private function handleHBOSelected(e:MouseEvent):void
+		private function handleHBOSelected(e:Event):void
 		{
 			config.hbo = !config.hbo;
 		}
 		
-		private function handleMiniHBOSelected(e:MouseEvent):void
+		private function handleMiniHBOSelected(e:Event):void
 		{
 			config.miniHbo = !config.miniHbo;
 		}
 		
-		private function handleFoxSelected(e:MouseEvent):void
+		private function handleFoxSelected(e:Event):void
 		{
 			config.fox = !config.fox;
 		}
 		
-		private function handleHotPackSelected(e:MouseEvent):void
+		private function handleHotPackSelected(e:Event):void
 		{
 			config.hotPack = !config.hotPack;
 		}
 		
-		private function handleRevista15Selected(e:MouseEvent):void
+		private function handleRevista15Selected(e:Event):void
 		{
 			config.revista15 = !config.revista15;
 		}
