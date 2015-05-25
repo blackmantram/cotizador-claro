@@ -11,7 +11,7 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var lineSelector:PhoneLineSelector;
+		public var lineSelector:PhoneLineSelector;
 		
 		public function PhoneView()
 		{

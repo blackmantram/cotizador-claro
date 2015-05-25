@@ -24,10 +24,5 @@ package com.pixo.cotizadorclaro.view.component
 				buttons.push(new NumberButton(skin, i));
 			return buttons;
 		}
-		
-		protected override function executeOnButtonSelected(target:SelectableButton):void
-		{
-			trace((target as NumberButton).position);	
-		}
 	}
 }

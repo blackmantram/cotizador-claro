@@ -5,9 +5,14 @@ package com.pixo.cotizadorclaro.view.base
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 
-	public class ButtonListSelector
+	public class ButtonListSelector extends EventDispatcher
 	{
-		private var selected:SelectableButton;
+		
+		private var _selected:SelectableButton;
+		public function get selected():SelectableButton
+		{
+			return _selected;
+		}
 		
 		public function ButtonListSelector(skin:Sprite)
 		{
@@ -20,11 +25,6 @@ package com.pixo.cotizadorclaro.view.base
 			throw new Error("method initializeButtonList is abstract and should be implemented");
 		}
 		
-		protected function executeOnButtonSelected(target:SelectableButton):void
-		{
-			throw new Error("method executeOnButtonSelected is abstract and should be implemented");
-		}
-		
 		private function addListeners(buttons:Vector.<SelectableButton>):void
 		{
 			for each(var button:SelectableButton in buttons)
@@ -33,13 +33,16 @@ package com.pixo.cotizadorclaro.view.base
 		
 		private function handleButtonSelected(e:Event):void
 		{
-			if (selected!= null)
-				selected.unselect();
-			selected =  e.target as SelectableButton;
-			selected.select();
-			executeOnButtonSelected(selected);
+			if (_selected!= null)
+				_selected.unselect();
+			_selected =  e.target as SelectableButton;
+			_selected.select();
+			executeButtonSelectedEvent();
 		}
 		
-		
+		private function executeButtonSelectedEvent():void
+		{
+			dispatchEvent(new Event(Event.SELECT));
+		}
 	}
 }

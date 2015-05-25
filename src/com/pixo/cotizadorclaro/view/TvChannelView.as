@@ -26,15 +26,15 @@ package com.pixo.cotizadorclaro.view
 		
 		private var channels:ChannelsViewer;
 		
-		private var hbo:SelectableButton;
+		public var hbo:SelectableButton;
 		
-		private var minihbo:SelectableButton;
+		public var minihbo:SelectableButton;
 		
-		private var fox:SelectableButton;
+		public var fox:SelectableButton;
 		
-		private var hotPack:SelectableButton;
+		public var hotPack:SelectableButton;
 		
-		private var revista15:SelectableButton;
+		public var revista15:SelectableButton;
 		
 		private var _skin:Sprite;
 		

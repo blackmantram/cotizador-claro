@@ -11,11 +11,11 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var pvr:NumberSelector;
+		public var pvr:NumberSelector;
 		
-		private var hd:NumberSelector;
+		public var hd:NumberSelector;
 		
-		private var standard:NumberSelector;
+		public var standard:NumberSelector;
 		
 		public function TvDecoView()
 		{

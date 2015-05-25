@@ -11,7 +11,7 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var bandSelector:BandSelector;
+		public var bandSelector:BandSelector;
 		
 		public function InternetView()
 		{

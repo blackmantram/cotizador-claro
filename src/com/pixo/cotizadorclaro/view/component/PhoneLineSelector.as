@@ -21,10 +21,5 @@ package com.pixo.cotizadorclaro.view.component
 				new SelectableButton(skin.getChildByName("line4") as Sprite, "4")
 			];
 		}
-		
-		protected override function executeOnButtonSelected(target:SelectableButton):void
-		{
-			trace(target.name);	
-		}
 	}
 }

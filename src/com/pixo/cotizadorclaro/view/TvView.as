@@ -24,7 +24,7 @@ package com.pixo.cotizadorclaro.view
 		[Skinnable]
 		public var channels_avanzada:Sprite;
 		
-		private var planSelector:TvPlanSelector;
+		public var planSelector:TvPlanSelector;
 		
 		private var _skin:Sprite;
 		
