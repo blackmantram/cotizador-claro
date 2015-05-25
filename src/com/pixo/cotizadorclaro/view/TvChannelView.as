@@ -4,14 +4,27 @@ package com.pixo.cotizadorclaro.view
 	
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	import com.pixo.cotizadorclaro.view.base.Slider;
+	import com.pixo.cotizadorclaro.view.component.ChannelsViewer;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	
 	public class TvChannelView extends Slider
 	{
 		[Skinnable]
-		public var channels:Sprite;
+		public var channels_hbo:Sprite;
+		
+		[Skinnable]
+		public var channels_minihbo:Sprite;
+		
+		[Skinnable]
+		public var channels_fox:Sprite;
+		
+		[Skinnable]
+		public var channels_hotpack:Sprite;
+		
+		private var channels:ChannelsViewer;
 		
 		private var hbo:SelectableButton;
 		
@@ -27,17 +40,36 @@ package com.pixo.cotizadorclaro.view
 		
 		public function TvChannelView()
 		{
-			channels.visible = false;
+			channels = new ChannelsViewer(skin);
+			initializeButtons();
+			addListeners();
+		}
+		
+		private function initializeButtons():void
+		{
 			hbo = new SelectableButton(_skin.getChildByName("hbo") as Sprite);
-			hbo.addEventListener(SelectableButton.SELECTED, handleHBOSelected);
 			minihbo = new SelectableButton(_skin.getChildByName("minihbo") as Sprite);
-			minihbo.addEventListener(SelectableButton.SELECTED, handleMiniHBOSelected);
 			fox = new SelectableButton(_skin.getChildByName("fox") as Sprite);
-			fox.addEventListener(SelectableButton.SELECTED, handleFOXSelected);
 			hotPack = new SelectableButton(_skin.getChildByName("hotPack") as Sprite);
-			hotPack.addEventListener(SelectableButton.SELECTED, handleHotPackSelected);
 			revista15 = new SelectableButton(_skin.getChildByName("revista15") as Sprite);
+		}
+		
+		private function addListeners():void
+		{
+			hbo.addEventListener(SelectableButton.SELECTED, handleHBOSelected);
+			minihbo.addEventListener(SelectableButton.SELECTED, handleMiniHBOSelected);
+			fox.addEventListener(SelectableButton.SELECTED, handleFOXSelected);
+			hotPack.addEventListener(SelectableButton.SELECTED, handleHotPackSelected);
 			revista15.addEventListener(SelectableButton.SELECTED, handleRevista15Selected);
+			channels_hbo.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_minihbo.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_fox.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_hotpack.addEventListener(MouseEvent.CLICK, handleChannels);
+		}
+		
+		private function handleChannels(e:MouseEvent):void
+		{
+			channels.show();
 		}
 		
 		private function handleHBOSelected(e:Event):void

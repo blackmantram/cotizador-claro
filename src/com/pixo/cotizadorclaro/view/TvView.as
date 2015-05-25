@@ -4,14 +4,25 @@ package com.pixo.cotizadorclaro.view
 	
 	import com.pixo.cotizadorclaro.view.base.SkinnableView;
 	import com.pixo.cotizadorclaro.view.base.Slider;
+	import com.pixo.cotizadorclaro.view.component.ChannelsViewer;
 	import com.pixo.cotizadorclaro.view.component.TvPlanSelector;
 	
 	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
 	
 	public class TvView extends Slider
 	{
+		private var channels:ChannelsViewer;
+		
 		[Skinnable]
-		public var channels:Sprite;
+		public var channels_basica:Sprite;
+		
+		[Skinnable]
+		public var channels_basica_premium:Sprite;
+		
+		[Skinnable]
+		public var channels_avanzada:Sprite;
 		
 		private var planSelector:TvPlanSelector;
 		
@@ -20,7 +31,20 @@ package com.pixo.cotizadorclaro.view
 		public function TvView()
 		{
 			planSelector = new TvPlanSelector(skin);
-			channels.visible = false;
+			addListeners();
+			channels = new ChannelsViewer(skin);
+		}
+		
+		private function addListeners():void
+		{
+			channels_basica.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_basica_premium.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_avanzada.addEventListener(MouseEvent.CLICK, handleChannels);
+		}
+		
+		private function handleChannels(e:MouseEvent):void
+		{
+			channels.show();
 		}
 		
 		protected override function get skin():Sprite
