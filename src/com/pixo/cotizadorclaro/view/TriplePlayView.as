@@ -4,7 +4,7 @@ package com.pixo.cotizadorclaro.view
 	
 	import com.pixo.cotizadorclaro.view.base.SkinnableView;
 	import com.pixo.cotizadorclaro.view.base.Slider;
-	import com.pixo.cotizadorclaro.view.component.SelectableButton;
+	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;

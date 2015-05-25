@@ -1,4 +1,4 @@
-package com.pixo.cotizadorclaro.view.component
+package com.pixo.cotizadorclaro.view.base
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -14,9 +14,12 @@ package com.pixo.cotizadorclaro.view.component
 		
 		protected var skin:Sprite;
 		
-		public function SelectableButton(skin:Sprite)
+		public var name:String;
+		
+		public function SelectableButton(skin:Sprite, name:String="")
 		{
 			this.skin = skin;
+			this.name = name;
 			skin.addEventListener(MouseEvent.CLICK, handleButtonClicked);
 			skin.buttonMode = true;
 			selected = skin.getChildByName("selected") as Sprite;

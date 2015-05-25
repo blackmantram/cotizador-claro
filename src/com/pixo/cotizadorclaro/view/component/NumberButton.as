@@ -2,8 +2,9 @@ package com.pixo.cotizadorclaro.view.component
 {
 	import flash.display.Sprite;
 	import flash.text.TextField;
+	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 
-	public class StratumButton extends SelectableButton
+	public class NumberButton extends SelectableButton
 	{
 		public var text:TextField;
 		
@@ -14,7 +15,7 @@ package com.pixo.cotizadorclaro.view.component
 			return _position;
 		}
 		
-		public function StratumButton(skin:Sprite, position:Number)
+		public function NumberButton(skin:Sprite, position:Number)
 		{
 			super(skin.getChildByName("s"+position) as Sprite);
 			text = this.skin.getChildByName("positionText") as TextField;

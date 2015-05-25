@@ -3,7 +3,7 @@ package com.pixo.cotizadorclaro.view
 	import assets.skins.AppSkins;
 	
 	import com.pixo.cotizadorclaro.view.base.Slider;
-	import com.pixo.cotizadorclaro.view.component.StratumSelector;
+	import com.pixo.cotizadorclaro.view.component.NumberSelector;
 	
 	import flash.display.Sprite;
 
@@ -11,12 +11,12 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var stratumSelector:StratumSelector;
+		private var stratumSelector:NumberSelector;
 		
 		
 		public function StratumView()
 		{
-			stratumSelector = new StratumSelector(_skin);
+			stratumSelector = new NumberSelector(_skin, 6);
 		}
 		
 		protected override function get skin():Sprite
