@@ -13,17 +13,11 @@ package com.pixo.cotizadorclaro.view
 	{
 		private var _skin:Sprite;
 		
-		private var selectButton:SelectableButton;
+		public var selectButton:SelectableButton;
 		
 		public function TriplePlayView()
 		{
 			selectButton = new SelectableButton(_skin.getChildByName("selectButton") as Sprite);
-			selectButton.addEventListener(SelectableButton.SELECTED, onSelected);
-		}
-		
-		private function onSelected(e:Event):void
-		{
-			selectButton.toggle();
 		}
 		
 		protected override function get skin():Sprite

@@ -2,45 +2,48 @@ package com.pixo.cotizadorclaro.view
 {
 	import assets.skins.AppSkins;
 	
-	import com.pixo.cotizadorclaro.view.base.Slider;
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
+	import com.pixo.cotizadorclaro.view.base.Slider;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
 	public class ServicesView extends Slider
 	{
-		private var tvButton:SelectableButton;
+		public var tvButton:SelectableButton;
 		
-		private var internetButton:SelectableButton;
+		public var internetButton:SelectableButton;
 		
-		private var phoneButton:SelectableButton;
+		public var phoneButton:SelectableButton;
 		
 		private var _skin:Sprite;
 		
 		public function ServicesView()
 		{
 			tvButton = new SelectableButton(_skin.getChildByName("tvButton") as Sprite);
-			tvButton.addEventListener(SelectableButton.SELECTED, handleTVSelected);
 			internetButton = new SelectableButton(_skin.getChildByName("internetButton") as Sprite);
-			internetButton.addEventListener(SelectableButton.SELECTED, handleInternetSelected);
 			phoneButton = new SelectableButton(_skin.getChildByName("phoneButton") as Sprite);
-			phoneButton.addEventListener(SelectableButton.SELECTED, handlePhoneSelected);
 		}
 		
-		private function handleTVSelected(e:Event):void
+		public function setTVState(selected:Boolean):void
 		{
-			tvButton.toggle();
+			tvButton.unselect();
+			if (selected)
+				tvButton.select ();
 		}
 		
-		private function handleInternetSelected(e:Event):void
+		public function setInternetState(selected:Boolean):void
 		{
-			internetButton.toggle();
+			internetButton.unselect();
+			if (selected)
+				internetButton.select ();
 		}
 		
-		private function handlePhoneSelected(e:Event):void
+		public function setPhoneState(selected:Boolean):void
 		{
-			phoneButton.toggle();
+			phoneButton.unselect();
+			if (selected)
+				phoneButton.select ();
 		}
 		
 		protected override function get skin():Sprite

@@ -1,44 +1,14 @@
 package com.pixo.cotizadorclaro.controller.commands.boostrap
 {
-	/*import com.pixo.futbolbayer.controller.commands.CheckAnswerCommand;
-	import com.pixo.futbolbayer.controller.commands.EndMatchCommand;
-	import com.pixo.futbolbayer.controller.commands.ExecuteFaultCommand;
-	import com.pixo.futbolbayer.controller.commands.ExecuteFreeKickCommand;
-	import com.pixo.futbolbayer.controller.commands.ExecutePenaltyCommand;
-	import com.pixo.futbolbayer.controller.commands.ExecuteSkipTurnCommand;
-	import com.pixo.futbolbayer.controller.commands.FinishSpecialActionCommand;
-	import com.pixo.futbolbayer.controller.commands.FinishStepCommand;
-	import com.pixo.futbolbayer.controller.commands.FreeKickCommand;
-	import com.pixo.futbolbayer.controller.commands.MovementCommand;
-	import com.pixo.futbolbayer.controller.commands.NextStepCommand;
-	import com.pixo.futbolbayer.controller.commands.PauseCommand;
-	import com.pixo.futbolbayer.controller.commands.PlayAmbienceSoundCommand;
-	import com.pixo.futbolbayer.controller.commands.PlayBallMovementSoundCommand;
-	import com.pixo.futbolbayer.controller.commands.PlayLowAmbienceSoundCommand;
-	import com.pixo.futbolbayer.controller.commands.PlayNormalAmbienceSoundCommand;
-	import com.pixo.futbolbayer.controller.commands.PlayWhistleCommand;
-	import com.pixo.futbolbayer.controller.commands.ResumeMatchCommand;
-	import com.pixo.futbolbayer.controller.commands.ReverseCommand;
-	import com.pixo.futbolbayer.controller.commands.ScoreCommand;
-	import com.pixo.futbolbayer.controller.commands.SelectSpecialActionCommand;
-	import com.pixo.futbolbayer.controller.commands.ShowQuestionCommand;
-	import com.pixo.futbolbayer.controller.commands.SkipTurnCommand;
-	import com.pixo.futbolbayer.controller.commands.SpecialActionCommand;
-	import com.pixo.futbolbayer.controller.commands.StartMatchCommand;
-	import com.pixo.futbolbayer.controller.commands.StopAllSoundsCommand;
-	import com.pixo.futbolbayer.controller.commands.StopLoopCommand;
-	import com.pixo.futbolbayer.controller.commands.UpdateMatchSettingsCommant;
-	import com.pixo.futbolbayer.controller.commands.UpdateTeamSettingsCommand;
-	import com.pixo.futbolbayer.controller.events.GameEvent;
-	import com.pixo.futbolbayer.view.events.AnimationEvent;
-	import com.pixo.futbolbayer.view.events.MatchEvent;
-	import com.pixo.futbolbayer.view.events.MovementEvent;
-	import com.pixo.futbolbayer.view.events.RefereeingEvent;
-	import com.pixo.futbolbayer.view.events.SettingsEvent;
-	import com.pixo.futbolbayer.view.events.SpecialActionEvent;
-	import com.pixo.futbolbayer.view.trivia.evemts.TriviaEvent;
 	
-	import flash.net.getClassByAlias;*/
+	import com.pixo.cotizadorclaro.controller.commands.InternetSelected;
+	import com.pixo.cotizadorclaro.controller.commands.NextNav;
+	import com.pixo.cotizadorclaro.controller.commands.PhoneSelected;
+	import com.pixo.cotizadorclaro.controller.commands.PrevNav;
+	import com.pixo.cotizadorclaro.controller.commands.TriplePlaySelected;
+	import com.pixo.cotizadorclaro.controller.commands.TvSelected;
+	import com.pixo.cotizadorclaro.controller.events.ConfigEvent;
+	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	
 	import org.robotlegs.mvcs.Command;
 	
@@ -46,6 +16,13 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 	{
 		override public function execute():void
 		{
+			commandMap.mapEvent(ConfigEvent.TV, TvSelected);
+			commandMap.mapEvent(ConfigEvent.INTERNET, InternetSelected);
+			commandMap.mapEvent(ConfigEvent.PHONE, PhoneSelected);
+			commandMap.mapEvent(ConfigEvent.TRIPLE_PLAY, TriplePlaySelected);
+			
+			commandMap.mapEvent(NavEvent.NEXT, NextNav);
+			commandMap.mapEvent(NavEvent.PREV, PrevNav);
 			/*commandMap.mapEvent(SettingsEvent.MATCH_SETTINGS_CHANGED, UpdateMatchSettingsCommant, SettingsEvent);
 			commandMap.mapEvent(SettingsEvent.TEAM_SETTINGS_CHANGED, UpdateTeamSettingsCommand, SettingsEvent);
 			

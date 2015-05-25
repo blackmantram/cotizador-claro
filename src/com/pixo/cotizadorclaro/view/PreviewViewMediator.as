@@ -1,6 +1,7 @@
 package com.pixo.cotizadorclaro.view
 {
 	import com.pixo.cotizadorclaro.controller.events.AppEvent;
+	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	
 	import flash.events.MouseEvent;
 	
@@ -21,7 +22,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleRegistryButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_REGISTRY));
+			dispatch(new NavEvent(NavEvent.NEXT));
 		}
 		
 		private function handleTvButton(e:MouseEvent):void

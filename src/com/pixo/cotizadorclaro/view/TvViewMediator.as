@@ -1,6 +1,6 @@
 package com.pixo.cotizadorclaro.view
 {
-	import com.pixo.cotizadorclaro.controller.events.AppEvent;
+	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	
 	import flash.events.MouseEvent;
 	
@@ -19,12 +19,12 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleNextButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_TV_DECO));
+			dispatch(new NavEvent(NavEvent.NEXT));
 		}
 		
 		private function handlePrevButton(e:MouseEvent):void
 		{
-			dispatch(new AppEvent(AppEvent.GO_TO_SERVICES));
+			dispatch(new NavEvent(NavEvent.PREV));
 		}
 	}
 }

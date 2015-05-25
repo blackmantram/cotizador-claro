@@ -1,7 +1,7 @@
 package com.pixo.cotizadorclaro.controller.commands.boostrap
 {
-	//import com.pixo.futbolbayer.model.MatchModel;
-	//import com.pixo.futbolbayer.model.SettingsModel;
+	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.model.Navigation;
 	
 	import org.robotlegs.mvcs.Command;
 	
@@ -9,9 +9,9 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 	{
 		override public function execute():void
 		{
-			//injector.mapSingleton(SettingsModel);
-			//injector.mapSingleton(MatchModel);
+			injector.mapSingleton(Config);
+			injector.mapSingleton(Navigation);
 		}
-	} 
+	}
 
 }
