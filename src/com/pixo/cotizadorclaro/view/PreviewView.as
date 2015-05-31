@@ -3,11 +3,13 @@ package com.pixo.cotizadorclaro.view
 	import assets.skins.AppSkins;
 	
 	import com.pixo.cotizadorclaro.model.Config;
-	import com.pixo.cotizadorclaro.model.CostCalculator;
+	import com.pixo.cotizadorclaro.service.CostResults;
 	import com.pixo.cotizadorclaro.view.base.SkinnableView;
+	import com.pixo.cotizadorclaro.view.component.Details;
 	import com.pixo.cotizadorclaro.view.component.SelectedItems;
 	
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
 	public class PreviewView extends SkinnableView
@@ -28,12 +30,6 @@ package com.pixo.cotizadorclaro.view
 		public var settings:Sprite;
 		
 		[Skinnable]
-		public var details:Sprite;
-		
-		[Skinnable]
-		public var selectedItems:SelectedItems;
-		
-		[Skinnable]
 		public var stratum:TextField;
 		
 		[Skinnable]
@@ -48,13 +44,27 @@ package com.pixo.cotizadorclaro.view
 		[Skinnable]
 		public var grandTotal:TextField;
 		
+		[Skinnable]
+		public var detailsButton:Sprite;
+		
+		public var selectedItems:SelectedItems;
+		
+		public var details:Details;
+		
 		private var _skin:Sprite;
 		
 		public function PreviewView()
 		{
+			selectedItems = new SelectedItems(skin.getChildByName("selectedItems") as Sprite);
+			details = new Details(skin.getChildByName("details") as Sprite);
 			settings.visible = false;
 			details.visible = false;
-			selectedItems = new SelectedItems(skin.getChildByName("selectedItems") as Sprite);
+			detailsButton.addEventListener(MouseEvent.CLICK, handleDetailsButtonPressed);
+		}
+		
+		private function handleDetailsButtonPressed(e:MouseEvent):void
+		{
+			details.show();
 		}
 		
 		protected override function get skin():Sprite
@@ -63,20 +73,20 @@ package com.pixo.cotizadorclaro.view
 			return _skin;
 		}
 		
-		public function setData(config:Config):void
+		public function setData(config:Config, costs:CostResults):void
 		{
 			selectedItems.setData(config);
+			details.setData(config, costs);
+			setCosts(costs);
 			stratum.text = config.stratum+"";
-			calculate(config);
 		}
 		
-		private function calculate(config:Config):void
+		private function setCosts(costs:CostResults):void
 		{
-			var calculator:CostCalculator = new CostCalculator(config);
-			tvTotal.text = calculator.tvTotal+"";
-			internetTotal.text = calculator.internetTotal+"";
-			phoneTotal.text = calculator.phoneTotal+"";
-			grandTotal.text = calculator.grandTotal+"";
+			tvTotal.text = costs.tvCost+"";
+			internetTotal.text = costs.internetCost+"";
+			phoneTotal.text = costs.phoneCost+"";
+			grandTotal.text = costs.rawPrice+"";
 		}
 	}
 }

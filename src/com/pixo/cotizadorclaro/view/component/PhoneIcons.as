@@ -22,7 +22,7 @@ package com.pixo.cotizadorclaro.view.component
 		public function setData(config:Config):void
 		{
 			init();
-			var phoneCount:Number = Number(config.phonelines.split("_")[1]);
+			var phoneCount:Number = config.phonelines;
 			for(var i:Number=1; i<=phoneCount; i++)
 				skin.getChildByName("phone"+i).visible = true;
 		}

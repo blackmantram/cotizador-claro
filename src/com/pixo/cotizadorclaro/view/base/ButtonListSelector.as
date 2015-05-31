@@ -7,7 +7,7 @@ package com.pixo.cotizadorclaro.view.base
 
 	public class ButtonListSelector extends EventDispatcher
 	{
-		
+		private var buttons:Vector.<SelectableButton>;
 		private var _selected:SelectableButton;
 		public function get selected():SelectableButton
 		{
@@ -16,8 +16,8 @@ package com.pixo.cotizadorclaro.view.base
 		
 		public function ButtonListSelector(skin:Sprite)
 		{
-			var buttons:Vector.<SelectableButton> = initializeButtonList(skin);
-			addListeners(buttons);
+			buttons = initializeButtonList(skin);
+			addListeners();
 		}
 		
 		protected function initializeButtonList(skin:Sprite):Vector.<SelectableButton>
@@ -25,7 +25,7 @@ package com.pixo.cotizadorclaro.view.base
 			throw new Error("method initializeButtonList is abstract and should be implemented");
 		}
 		
-		private function addListeners(buttons:Vector.<SelectableButton>):void
+		private function addListeners():void
 		{
 			for each(var button:SelectableButton in buttons)
 				button.addEventListener(SelectableButton.SELECTED, handleButtonSelected);
@@ -43,6 +43,14 @@ package com.pixo.cotizadorclaro.view.base
 		private function executeButtonSelectedEvent():void
 		{
 			dispatchEvent(new Event(Event.SELECT));
+		}
+		
+		protected function getButton(name:String):SelectableButton
+		{
+			for each(var button:SelectableButton in buttons)
+				if (button.name == name)
+					return button;
+			return null;
 		}
 	}
 }

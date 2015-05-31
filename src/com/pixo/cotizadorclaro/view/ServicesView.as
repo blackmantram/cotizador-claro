@@ -2,6 +2,7 @@ package com.pixo.cotizadorclaro.view
 {
 	import assets.skins.AppSkins;
 	
+	import com.pixo.cotizadorclaro.model.Config;
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	import com.pixo.cotizadorclaro.view.base.Slider;
 	

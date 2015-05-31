@@ -16,10 +16,10 @@ package com.pixo.cotizadorclaro.view.component
 		protected override function initializeButtonList(skin:Sprite):Vector.<SelectableButton>
 		{
 			return new <SelectableButton>[
-				new SelectableButton(skin.getChildByName("line1") as Sprite, Config.PHONE_1), 
-				new SelectableButton(skin.getChildByName("line2") as Sprite, Config.PHONE_2),
-				new SelectableButton(skin.getChildByName("line3") as Sprite, Config.PHONE_3),
-				new SelectableButton(skin.getChildByName("line4") as Sprite, Config.PHONE_4)
+				new SelectableButton(skin.getChildByName("line1") as Sprite, Config.PHONE_1+""), 
+				new SelectableButton(skin.getChildByName("line2") as Sprite, Config.PHONE_2+""),
+				new SelectableButton(skin.getChildByName("line3") as Sprite, Config.PHONE_3+""),
+				new SelectableButton(skin.getChildByName("line4") as Sprite, Config.PHONE_4+"")
 			];
 		}
 	}

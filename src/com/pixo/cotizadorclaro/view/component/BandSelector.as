@@ -13,6 +13,12 @@ package com.pixo.cotizadorclaro.view.component
 			super(skin);
 		}
 		
+		public function set stratum(value:Number):void
+		{
+			if (value>=2)
+				getButton(Config.INTERNET_3).disable();
+		}
+		
 		protected override function initializeButtonList(skin:Sprite):Vector.<SelectableButton>
 		{
 			return new <SelectableButton>[

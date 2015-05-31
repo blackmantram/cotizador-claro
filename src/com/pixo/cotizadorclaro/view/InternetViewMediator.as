@@ -21,6 +21,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
 			eventMap.mapListener(view.bandSelector, Event.SELECT, handleBandSelected);
+			view.bandSelector.stratum = config.stratum;
 		}
 		
 		private function handleNextButton(e:MouseEvent):void

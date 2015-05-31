@@ -11,24 +11,28 @@ package com.pixo.cotizadorclaro.view.base
 		public static const SELECTED:String = "SELECTED";
 		
 		private var selected:Sprite;
+		private var disabled:Sprite;
 		
 		protected var skin:Sprite;
 		
 		public var name:String;
+		
+		private var enabled:Boolean = true;
 		
 		public function SelectableButton(skin:Sprite, name:String="")
 		{
 			this.skin = skin;
 			this.name = name;
 			skin.addEventListener(MouseEvent.CLICK, handleButtonClicked);
-			skin.buttonMode = true;
+			disabled = skin.getChildByName("disabled") as Sprite;
 			selected = skin.getChildByName("selected") as Sprite;
-			selected.visible = false;
+			enable();
 		}
 		
 		private function handleButtonClicked(e:MouseEvent):void
 		{
-			dispatchEvent(new Event(SelectableButton.SELECTED));
+			if (enabled)
+				dispatchEvent(new Event(SelectableButton.SELECTED));
 		}
 		
 		public function select():void
@@ -44,6 +48,22 @@ package com.pixo.cotizadorclaro.view.base
 		public function toggle():void
 		{
 			selected.visible = !selected.visible;
+		}
+		
+		public function disable():void
+		{
+			selected.visible = false;
+			disabled.visible = true;
+			enabled = false;
+		}
+		
+		public function enable():void
+		{
+			if (disabled == null)
+				disabled = new Sprite();
+			disabled.visible = false;
+			selected.visible = false;
+			enabled = true;
 		}
 	}
 }

@@ -13,6 +13,12 @@ package com.pixo.cotizadorclaro.view.component
 			super(skin);
 		}
 		
+		public function set stratum(value:Number):void
+		{
+			if (value>=4)
+				getButton(Config.TV_BASICA_PREMIUM).disable();
+		}
+		
 		protected override function initializeButtonList(skin:Sprite):Vector.<SelectableButton>
 		{
 			return new <SelectableButton>[

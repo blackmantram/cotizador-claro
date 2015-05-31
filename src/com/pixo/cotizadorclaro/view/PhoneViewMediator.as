@@ -25,7 +25,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleNextButton(e:MouseEvent):void
 		{
-			if (config.phonelines != "")
+			if (config.phonelines > 0)
 			dispatch(new NavEvent(NavEvent.NEXT));
 		}
 		
@@ -36,7 +36,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleLineSelected(e:Event):void
 		{
-			config.phonelines = view.lineSelector.selected.name;
+			config.phonelines = view.lineSelector.selected.name as Number;
 		}
 	}
 }

@@ -25,7 +25,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
 			eventMap.mapListener(view.tvButton, SelectableButton.SELECTED, handleTvSelected);
 			eventMap.mapListener(view.internetButton, SelectableButton.SELECTED, handleInternetSelected);
-			eventMap.mapListener(view.phoneButton, SelectableButton.SELECTED, handlePhoneSelected);
+			eventMap.mapListener(view.phoneButton, SelectableButton.SELECTED, handlePhoneSelected);	
 		}
 		
 		private function updateStates():void

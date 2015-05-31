@@ -1,6 +1,7 @@
 package com.pixo.cotizadorclaro.controller.commands.boostrap
 {
 	
+	import com.pixo.cotizadorclaro.controller.commands.CalcCost;
 	import com.pixo.cotizadorclaro.controller.commands.InternetSelected;
 	import com.pixo.cotizadorclaro.controller.commands.JumpNav;
 	import com.pixo.cotizadorclaro.controller.commands.NextNav;
@@ -8,6 +9,7 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 	import com.pixo.cotizadorclaro.controller.commands.PrevNav;
 	import com.pixo.cotizadorclaro.controller.commands.TriplePlaySelected;
 	import com.pixo.cotizadorclaro.controller.commands.TvSelected;
+	import com.pixo.cotizadorclaro.controller.events.AppEvent;
 	import com.pixo.cotizadorclaro.controller.events.ConfigEvent;
 	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	
@@ -25,6 +27,8 @@ package com.pixo.cotizadorclaro.controller.commands.boostrap
 			commandMap.mapEvent(NavEvent.NEXT, NextNav);
 			commandMap.mapEvent(NavEvent.PREV, PrevNav);
 			commandMap.mapEvent(NavEvent.JUMP, JumpNav, NavEvent);
+			
+			commandMap.mapEvent(AppEvent.GO_TO_PREVIEW, CalcCost);
 		}
 	}
 }

@@ -4,19 +4,19 @@ package com.pixo.cotizadorclaro.model
 	
 	public class Config extends Actor
 	{
-		public static const TV_BASICA:String = "TV_BASICA";
-		public static const TV_BASICA_PREMIUM:String = "TV_BASICA_PREMIUM";
-		public static const TV_AVANZADA:String = "TV_AVANZADA";
+		public static const TV_BASICA:String = "Basica";
+		public static const TV_BASICA_PREMIUM:String = "Premium";
+		public static const TV_AVANZADA:String = "Avanzada";
 		
 		public static const INTERNET_20:String = "20MB";
 		public static const INTERNET_10:String = "10MB";
 		public static const INTERNET_5:String = "5MB";
 		public static const INTERNET_3:String = "3MB";
 		
-		public static const PHONE_1:String = "PHONE_1";
-		public static const PHONE_2:String = "PHONE_2";
-		public static const PHONE_3:String = "PHONE_3";
-		public static const PHONE_4:String = "PHONE_4";
+		public static const PHONE_1:Number = 1;
+		public static const PHONE_2:Number = 2;
+		public static const PHONE_3:Number = 3;
+		public static const PHONE_4:Number = 4;
 		
 		public var stratum:Number = 0;
 		public var city:String = "";
@@ -37,7 +37,7 @@ package com.pixo.cotizadorclaro.model
 		
 		public var internetplan:String = "";
 		
-		public var phonelines:String = "";
+		public var phonelines:Number = 0;
 		
 		public function get isTriplePlaySelected():Boolean
 		{
