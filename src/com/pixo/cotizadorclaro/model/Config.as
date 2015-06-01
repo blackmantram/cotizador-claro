@@ -53,5 +53,23 @@ package com.pixo.cotizadorclaro.model
 		{
 			return decoPVR + decoHD + decoStandard > 0;
 		}
+		
+		public function get additionalsJSON():String
+		{
+			var additionalsObject:Object = {};
+			if (hbo) additionalsObject["hbo"] = 1;
+			if (miniHbo) additionalsObject["hbomini"] = 1;
+			if (fox) additionalsObject["fox"] = 1;
+			if (hotPack) additionalsObject["hotpack"] = 1;
+			if (revista15) additionalsObject["revista"] = 1;
+			if (decoPVR>0) additionalsObject["pvr1"] = 1;
+			if (decoPVR>1) additionalsObject["pvr2"] = decoPVR-1;
+			if (decoHD>0) additionalsObject["hd1"] = 1;
+			if (decoHD>1) additionalsObject["hd1"] = decoHD-1;
+			if (decoStandard>1) additionalsObject["hd1"] = decoStandard-1;
+			if (phone && phonelines>0) additionalsObject["instalaciontel"] = phonelines-1;
+			
+			return JSON.stringify(additionalsObject);
+		}
 	}
 }

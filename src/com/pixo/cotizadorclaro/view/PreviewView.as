@@ -86,7 +86,7 @@ package com.pixo.cotizadorclaro.view
 			tvTotal.text = costs.tvCost+"";
 			internetTotal.text = costs.internetCost+"";
 			phoneTotal.text = costs.phoneCost+"";
-			grandTotal.text = costs.rawPrice+"";
+			grandTotal.text = costs.totalPrice+"";
 		}
 	}
 }

@@ -18,6 +18,8 @@ package com.pixo.cotizadorclaro.controller.events
 		public static const GO_TO_PREVIEW:String = "AppEvent.GO_TO_PREVIEW";
 		public static const GO_TO_REGISTRY:String = "AppEvent.GO_TO_REGISTRY";
 		
+		public static const FIRST_TIME_CITIES:String = "AppEvent.FIRST_TIME_CITIES";
+		
 		/**
 		 *	@constructor
 		 */

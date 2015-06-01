@@ -1,0 +1,156 @@
+[
+	{
+		"id" : "1",
+		"ciudad" : "Acacias"
+	}, {
+		"id" : "2",
+		"ciudad" : "Armenia"
+	}, {
+		"id" : "3",
+		"ciudad" : "Barranquilla"
+	}, {
+		"id" : "4",
+		"ciudad" : "Bello"
+	}, {
+		"id" : "5",
+		"ciudad" : "Bogota D.C."
+	}, {
+		"id" : "6",
+		"ciudad" : "Bucaramanga"
+	}, {
+		"id" : "7",
+		"ciudad" : "Guadalajara De Buga"
+	}, {
+		"id" : "8",
+		"ciudad" : "Cajica"
+	}, {
+		"id" : "9",
+		"ciudad" : "Caldas"
+	}, {
+		"id" : "10",
+		"ciudad" : "Cali"
+	}, {
+		"id" : "11",
+		"ciudad" : "Candelaria"
+	}, {
+		"id" : "12",
+		"ciudad" : "Cartagena"
+	}, {
+		"id" : "13",
+		"ciudad" : "Chia"
+	}, {
+		"id" : "14",
+		"ciudad" : "Cucuta"
+	}, {
+		"id" : "15",
+		"ciudad" : "Duitama"
+	}, {
+		"id" : "16",
+		"ciudad" : "Espinal"
+	}, {
+		"id" : "17",
+		"ciudad" : "Facatativa"
+	}, {
+		"id" : "18",
+		"ciudad" : "Florencia"
+	}, {
+		"id" : "19",
+		"ciudad" : "Floridablanca"
+	}, {
+		"id" : "20",
+		"ciudad" : "Fusagasuga"
+	}, {
+		"id" : "21",
+		"ciudad" : "Girardot"
+	}, {
+		"id" : "22",
+		"ciudad" : "Ibague"
+	}, {
+		"id" : "23",
+		"ciudad" : "Jamundi"
+	}, {
+		"id" : "24",
+		"ciudad" : "Leticia"
+	}, {
+		"id" : "25",
+		"ciudad" : "Madrid"
+	}, {
+		"id" : "26",
+		"ciudad" : "Manizales"
+	}, {
+		"id" : "27",
+		"ciudad" : "Medellin"
+	}, {
+		"id" : "28",
+		"ciudad" : "Medellin Antioquia"
+	}, {
+		"id" : "29",
+		"ciudad" : "Mocoa"
+	}, {
+		"id" : "30",
+		"ciudad" : "Monteria"
+	}, {
+		"id" : "31",
+		"ciudad" : "Mosquera"
+	}, {
+		"id" : "32",
+		"ciudad" : "Neiva"
+	}, {
+		"id" : "33",
+		"ciudad" : "Palmira"
+	}, {
+		"id" : "34",
+		"ciudad" : "Pasto"
+	}, {
+		"id" : "35",
+		"ciudad" : "Pereira"
+	}, {
+		"id" : "36",
+		"ciudad" : "Popayan"
+	}, {
+		"id" : "37",
+		"ciudad" : "Puerto Carreno"
+	}, {
+		"id" : "38",
+		"ciudad" : "Riohacha"
+	}, {
+		"id" : "39",
+		"ciudad" : "Rionegro"
+	}, {
+		"id" : "40",
+		"ciudad" : "Santa Marta"
+	}, {
+		"id" : "41",
+		"ciudad" : "Santander De Quilichao"
+	}, {
+		"id" : "42",
+		"ciudad" : "Sincelejo"
+	}, {
+		"id" : "43",
+		"ciudad" : "Soacha"
+	}, {
+		"id" : "44",
+		"ciudad" : "Sogamoso"
+	}, {
+		"id" : "45",
+		"ciudad" : "Tulua"
+	}, {
+		"id" : "46",
+		"ciudad" : "Tunja"
+	}, {
+		"id" : "47",
+		"ciudad" : "Valledupar"
+	}, {
+		"id" : "48",
+		"ciudad" : "Villavicencio"
+	}, {
+		"id" : "49",
+		"ciudad" : "Yopal"
+	}, {
+		"id" : "50",
+		"ciudad" : "Yumbo"
+	}, {
+		"id" : "51",
+		"ciudad" : "Zipaquira"
+	}
+]

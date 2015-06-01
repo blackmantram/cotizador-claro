@@ -7,13 +7,25 @@ package com.pixo.cotizadorclaro.service
 		public var phoneCost:Number = 0;
 		public var baseCost:Number = 0;
 		public var promoPrice:Number = 0;
+		public var additionals:Vector.<AdditionalCost> = new Vector.<AdditionalCost>();
 		
-		public function get rawPrice():Number{
+		public function get additionalCosts():Number{
+			var additionalCost:Number = 0;
+			for each(var cost:AdditionalCost in additionals)
+				additionalCost += cost.value;
+			return additionalCost;
+		}
+		
+		public function get packetPrice():Number{
 			return tvCost + internetCost + phoneCost;
 		}
 		
+		public function get totalPrice():Number{
+			return packetPrice + additionalCosts;
+		}
+		
 		public function get monthlySaving():Number {
-			return rawPrice - promoPrice;
+			return totalPrice - promoPrice;
 		}
 		
 		public function get yearlySaving():Number {

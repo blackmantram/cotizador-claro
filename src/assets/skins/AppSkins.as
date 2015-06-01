@@ -40,5 +40,8 @@ package assets.skins
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="preview")]
 		public static var Preview:Class;
+		
+		[Embed(source="cotizador/AppSkins.swf", symbol="dropDownItem")]
+		public static var DropDownItem:Class;
 	}
 }

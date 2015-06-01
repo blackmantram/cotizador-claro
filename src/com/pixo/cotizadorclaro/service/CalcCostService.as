@@ -37,11 +37,13 @@ package com.pixo.cotizadorclaro.service
 		
 		private function getURL(config:Config):String
 		{
-			var url:String = "http://santandercalidad.com/claro_app/cotizador/cotizar.php?estrato=%s%&tv=%tv%&internet=%i%&voz=%p%";
+			var url:String = "http://santandercalidad.com/claro_app/cotizador/cotizar.php?estrato=%s%&tv=%tv%&internet=%i%&voz=%p%&ciudad=%c%&adicionales=%a%";
 			url = url.replace("%s%", config.stratum+"");
 			url = url.replace("%tv%", config.tvplan+"");
 			url = url.replace("%i%", config.internetplan+"");
 			url = url.replace("%p%", config.phonelines+"");
+			url = url.replace("%c%", config.city+"");
+			url = url.replace("%a%", config.additionalsJSON+"");
 			trace(url);
 			return url;
 		}
@@ -63,7 +65,14 @@ package com.pixo.cotizadorclaro.service
 			costResults.baseCost = Number(costs["planes"][0]["precio_total"]);
 			costResults.promoPrice = Number(costs["planes"][0]["tarifa_promo"]);
 			
-			trace(costResults.tvCost);
+			for (var key:String in costs["adicionales"])
+			{
+				var additionalCost:AdditionalCost = new AdditionalCost();
+				additionalCost.name = key;
+				additionalCost.value = Number(costs["adicionales"][key]);
+				trace(additionalCost.name+" "+additionalCost.value);
+				costResults.additionals.push(additionalCost);
+			}
 			
 			return costResults;
 		}

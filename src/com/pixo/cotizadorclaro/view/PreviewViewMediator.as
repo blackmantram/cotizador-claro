@@ -3,8 +3,6 @@ package com.pixo.cotizadorclaro.view
 	import com.pixo.cotizadorclaro.controller.events.AppEvent;
 	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	import com.pixo.cotizadorclaro.model.Config;
-	import com.pixo.cotizadorclaro.service.CalcCostService;
-	import com.pixo.cotizadorclaro.service.ICalcCostService;
 	import com.pixo.cotizadorclaro.service.event.CalcCostEvent;
 	
 	import flash.events.MouseEvent;
