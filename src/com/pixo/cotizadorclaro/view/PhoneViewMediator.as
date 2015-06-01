@@ -21,6 +21,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
 			eventMap.mapListener(view.lineSelector, Event.SELECT, handleLineSelected);
+			view.lineSelector.select(config.phonelines);
 		}
 		
 		private function handleNextButton(e:MouseEvent):void

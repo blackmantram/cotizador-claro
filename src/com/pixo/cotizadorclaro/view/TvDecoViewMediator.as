@@ -25,6 +25,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.pvr, Event.SELECT, handleDecosSelected);
 			eventMap.mapListener(view.hd, Event.SELECT, handleDecosSelected);
 			eventMap.mapListener(view.standard, Event.SELECT, handleDecosSelected);
+			view.standard.select(config.decoStandard);
 		}
 		
 		private function handleNextButton(e:MouseEvent):void

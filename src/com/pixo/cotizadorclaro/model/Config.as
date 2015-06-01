@@ -21,9 +21,9 @@ package com.pixo.cotizadorclaro.model
 		public var stratum:Number = 0;
 		public var city:String = "";
 		
-		public var tv:Boolean = false;
-		public var internet:Boolean = false;
-		public var phone:Boolean = false;
+		private var _tv:Boolean = false;
+		private var _internet:Boolean = false;
+		private var _phone:Boolean = false;
 		
 		public var tvplan:String = "";
 		public var decoPVR:Number = 0;
@@ -38,6 +38,44 @@ package com.pixo.cotizadorclaro.model
 		public var internetplan:String = "";
 		
 		public var phonelines:Number = 0;
+		
+		public function get tv():Boolean
+		{
+			return _tv;
+		}
+		
+		public function set tv(val:Boolean):void
+		{
+			if (val)
+				decoStandard = 1;
+			else
+				decoStandard = 0;
+			_tv = val;
+		}
+		
+		public function get internet():Boolean
+		{
+			return _internet;
+		}
+		
+		public function set internet(val:Boolean):void
+		{
+			_internet = val;
+		}
+		
+		public function get phone():Boolean
+		{
+			return _phone;
+		}
+		
+		public function set phone(val:Boolean):void
+		{
+			if (val)
+				phonelines = 1;
+			else
+				phonelines = 0;
+			_phone = val;
+		}
 		
 		public function get isTriplePlaySelected():Boolean
 		{

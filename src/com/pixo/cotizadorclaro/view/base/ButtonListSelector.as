@@ -14,6 +14,12 @@ package com.pixo.cotizadorclaro.view.base
 			return _selected;
 		}
 		
+		public function select(number:Number):void
+		{
+			for (var i:Number = 0; i<number; i++)
+				buttons[i].select();
+		}
+		
 		public function ButtonListSelector(skin:Sprite)
 		{
 			buttons = initializeButtonList(skin);
