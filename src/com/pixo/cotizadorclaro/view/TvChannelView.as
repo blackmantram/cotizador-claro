@@ -4,8 +4,10 @@ package com.pixo.cotizadorclaro.view
 	
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	import com.pixo.cotizadorclaro.view.base.Slider;
-	import com.pixo.cotizadorclaro.view.component.ChannelsViewer;
+	import com.pixo.cotizadorclaro.view.component.AdditionalChannelsViewer;
+	import com.pixo.cotizadorclaro.view.component.BasicChannelsViewer;
 	
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -24,7 +26,7 @@ package com.pixo.cotizadorclaro.view
 		[Skinnable]
 		public var channels_hotpack:Sprite;
 		
-		private var channels:ChannelsViewer;
+		private var channels:AdditionalChannelsViewer;
 		
 		public var hbo:SelectableButton;
 		
@@ -40,9 +42,9 @@ package com.pixo.cotizadorclaro.view
 		
 		public function TvChannelView()
 		{
-			channels = new ChannelsViewer(skin);
 			initializeButtons();
 			addListeners();
+			channels = new AdditionalChannelsViewer(skin);
 		}
 		
 		private function initializeButtons():void
@@ -61,15 +63,15 @@ package com.pixo.cotizadorclaro.view
 			fox.addEventListener(SelectableButton.SELECTED, handleFOXSelected);
 			hotPack.addEventListener(SelectableButton.SELECTED, handleHotPackSelected);
 			revista15.addEventListener(SelectableButton.SELECTED, handleRevista15Selected);
-			channels_hbo.addEventListener(MouseEvent.CLICK, handleChannels);
-			channels_minihbo.addEventListener(MouseEvent.CLICK, handleChannels);
-			channels_fox.addEventListener(MouseEvent.CLICK, handleChannels);
-			channels_hotpack.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_hbo.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(1);});
+			channels_minihbo.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(2);});
+			channels_fox.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(3);});
+			channels_hotpack.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(4);});
 		}
 		
-		private function handleChannels(e:MouseEvent):void
+		private function showChannels(position:Number):void
 		{
-			channels.show();
+			channels.show(position);
 		}
 		
 		private function handleHBOSelected(e:Event):void

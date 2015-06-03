@@ -15,7 +15,7 @@ package assets.skins
 		public static var StratumSkin:Class;
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="tripleplay")]
-		public static var TriplePlaye:Class;
+		public static var TriplePlay:Class;
 		
 		[Embed(source="cotizador/AppSkins.swf", symbol="services")]
 		public static var Services:Class;

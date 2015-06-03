@@ -4,7 +4,7 @@ package com.pixo.cotizadorclaro.view
 	
 	import com.pixo.cotizadorclaro.view.base.SkinnableView;
 	import com.pixo.cotizadorclaro.view.base.Slider;
-	import com.pixo.cotizadorclaro.view.component.ChannelsViewer;
+	import com.pixo.cotizadorclaro.view.component.BasicChannelsViewer;
 	import com.pixo.cotizadorclaro.view.component.TvPlanSelector;
 	
 	import flash.display.Sprite;
@@ -13,7 +13,7 @@ package com.pixo.cotizadorclaro.view
 	
 	public class TvView extends Slider
 	{
-		private var channels:ChannelsViewer;
+		private var channels:BasicChannelsViewer;
 		
 		[Skinnable]
 		public var channels_basica:Sprite;
@@ -32,19 +32,19 @@ package com.pixo.cotizadorclaro.view
 		{
 			planSelector = new TvPlanSelector(skin);
 			addListeners();
-			channels = new ChannelsViewer(skin);
+			channels = new BasicChannelsViewer(skin);
 		}
 		
 		private function addListeners():void
 		{
-			channels_basica.addEventListener(MouseEvent.CLICK, handleChannels);
-			channels_basica_premium.addEventListener(MouseEvent.CLICK, handleChannels);
-			channels_avanzada.addEventListener(MouseEvent.CLICK, handleChannels);
+			channels_basica.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(BasicChannelsViewer.BASICA)});
+			channels_basica_premium.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(BasicChannelsViewer.PREMIUM)});
+			channels_avanzada.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{showChannels(BasicChannelsViewer.AVANZADA)});
 		}
 		
-		private function handleChannels(e:MouseEvent):void
+		private function showChannels(type:String):void
 		{
-			channels.show();
+			channels.show(type);
 		}
 		
 		protected override function get skin():Sprite

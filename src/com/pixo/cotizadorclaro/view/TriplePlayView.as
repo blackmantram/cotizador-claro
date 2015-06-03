@@ -22,7 +22,7 @@ package com.pixo.cotizadorclaro.view
 		
 		protected override function get skin():Sprite
 		{
-			if (_skin == null) _skin = new AppSkins.TriplePlaye() as Sprite;
+			if (_skin == null) _skin = new AppSkins.TriplePlay() as Sprite;
 			return _skin;
 		}
 	}
