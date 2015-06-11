@@ -38,5 +38,36 @@ package com.pixo.cotizadorclaro.service
 		public function get additionalsPrice():Number {
 			return 0;
 		}
+		
+		public function has(search:String):Boolean
+		{
+			for (var key:String in additionals)
+			{
+				if (key.indexOf(search)==0 && Number(additionals[key]["count"]) > 0)
+					return true;
+			}
+			for (key in included)
+			{
+				if (key.indexOf(search)==0 && Number(included[key]) > 0)
+					return true;
+			}
+			return false;
+		}
+		
+		public function countOf(search:String):Number
+		{
+			var count:Number = 0;
+			for (var key:String in additionals)
+			{
+				if (key.indexOf(search)==0)
+					count += Number(additionals[key]["count"]);
+			}
+			for (key in included)
+			{
+				if (key.indexOf(search)==0)
+					count += Number(included[key]);
+			}
+			return count;
+		}
 	}
 }

@@ -1,6 +1,8 @@
 package com.pixo.cotizadorclaro.view.component
 {
 	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.model.CostCalculator;
+	import com.pixo.cotizadorclaro.service.CostResults;
 	
 	import flash.display.Sprite;
 	import flash.text.TextField;
@@ -39,12 +41,22 @@ package com.pixo.cotizadorclaro.view.component
 			r15min = skin.getChildByName("r15min") as Sprite;
 		}
 		
-		public function setData(config:Config):void
+		public function setData(config:Config, costs:CostResults):void
 		{
 			posX = 0;
-			pvr.visible = config.decoPVR > 0; getBadgeText(pvr).text = config.decoPVR+""; adjust(pvr);
-			hd.visible = config.decoHD > 0; getBadgeText(hd).text = config.decoHD+""; adjust(hd);
-			standard.visible = config.decoStandard > 0; getBadgeText(standard).text = config.decoStandard+""; adjust(standard);
+			
+			pvr.visible = costs.has("pvr");
+			getBadgeText(pvr).text = costs.countOf("pvr")+""; 
+			adjust(pvr);
+			
+			hd.visible = costs.has("hd");
+			getBadgeText(hd).text = costs.countOf("hd")+""; 
+			adjust(hd);
+			
+			standard.visible = costs.has("standard");
+			getBadgeText(standard).text = costs.countOf("standard")+""; 
+			adjust(standard);
+			
 			hbo.visible = config.hbo>0; adjust(hbo);
 			miniHBO.visible = config.miniHbo>0; adjust(miniHBO);
 			fox.visible = config.fox; adjust(fox);

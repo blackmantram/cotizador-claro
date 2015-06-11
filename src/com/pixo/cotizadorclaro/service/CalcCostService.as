@@ -60,7 +60,7 @@ package com.pixo.cotizadorclaro.service
 			costResults.promoPrice = Number(costs["plan"]["tarifa_promo"]);
 			
 			costResults.additionals = costs["adicionales"] as Object;
-			costResults.additionals = costs["adicionales"] as Object;
+			costResults.included = costs["incluidos"] as Object;
 			
 			return costResults;
 		}

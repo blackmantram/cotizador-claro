@@ -1,6 +1,7 @@
 package com.pixo.cotizadorclaro.view.component
 {
 	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.service.CostResults;
 	
 	import flash.display.Sprite;
 	import flash.text.TextField;
@@ -23,10 +24,10 @@ package com.pixo.cotizadorclaro.view.component
 			internet.visible = false;
 		}
 		
-		public function setData(config:Config):void
+		public function setData(config:Config, costs:CostResults):void
 		{
 			init();
-			tvIcons.setData(config);
+			tvIcons.setData(config, costs);
 			if (config.internetplan != "")
 			{
 				internet.visible = true;

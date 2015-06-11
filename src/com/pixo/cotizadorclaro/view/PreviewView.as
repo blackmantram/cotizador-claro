@@ -75,7 +75,7 @@ package com.pixo.cotizadorclaro.view
 		
 		public function setData(config:Config, costs:CostResults):void
 		{
-			selectedItems.setData(config);
+			selectedItems.setData(config, costs);
 			details.setData(config, costs);
 			setCosts(costs);
 			stratum.text = config.stratum+"";
