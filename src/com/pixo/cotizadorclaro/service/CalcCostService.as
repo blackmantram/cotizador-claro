@@ -53,26 +53,14 @@ package com.pixo.cotizadorclaro.service
 			var costs:Object = skyboy.serialization.JSON.decode(results) as Object;
 			var costResults:CostResults = new CostResults();
 			
-			trace(Number(costs["planes"][0]["precio_tv"])+" "+typeof(costs["planes"][0]["precio_tv"]));
-			trace(Number(costs["planes"][0]["precio_A"])+" "+typeof(costs["planes"][0]["precio_A"]));
-			trace(Number(costs["planes"][0]["precio_voz"])+" "+typeof(costs["planes"][0]["precio_voz"]));
-			trace(Number(costs["planes"][0]["precio_total"])+" "+typeof(costs["planes"][0]["precio_total"]));
-			trace(Number(costs["planes"][0]["tarifa_promo"])+" "+typeof(costs["planes"][0]["tarifa_promo"]));
+			costResults.tvCost =  Number(costs["plan"]["precio_tv"]);
+			costResults.internetCost = Number(costs["plan"]["precio_A"]);
+			costResults.phoneCost = Number(costs["plan"]["precio_voz"]);
+			costResults.baseCost = Number(costs["plan"]["precio_total"]);
+			costResults.promoPrice = Number(costs["plan"]["tarifa_promo"]);
 			
-			costResults.tvCost =  Number(costs["planes"][0]["precio_tv"]);
-			costResults.internetCost = Number(costs["planes"][0]["precio_A"]);
-			costResults.phoneCost = Number(costs["planes"][0]["precio_voz"]);
-			costResults.baseCost = Number(costs["planes"][0]["precio_total"]);
-			costResults.promoPrice = Number(costs["planes"][0]["tarifa_promo"]);
-			
-			for (var key:String in costs["adicionales"])
-			{
-				var additionalCost:AdditionalCost = new AdditionalCost();
-				additionalCost.name = key;
-				additionalCost.value = Number(costs["adicionales"][key]);
-				trace(additionalCost.name+" "+additionalCost.value);
-				costResults.additionals.push(additionalCost);
-			}
+			costResults.additionals = costs["adicionales"] as Object;
+			costResults.additionals = costs["adicionales"] as Object;
 			
 			return costResults;
 		}

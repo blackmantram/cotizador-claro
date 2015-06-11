@@ -25,6 +25,8 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
 			eventMap.mapListener(eventDispatcher, CalcCostEvent.CALC_LOADED, handleCalcLoaded);
+			if (config.isTriplePlaySelected)
+				view.setData(config, config.triplePlayCost);
 		}
 		
 		private function handleRegistryButton(e:MouseEvent):void

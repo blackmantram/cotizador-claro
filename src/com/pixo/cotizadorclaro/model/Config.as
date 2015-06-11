@@ -1,5 +1,7 @@
 package com.pixo.cotizadorclaro.model
 {
+	import com.pixo.cotizadorclaro.service.CostResults;
+	
 	import org.robotlegs.mvcs.Actor;
 	
 	public class Config extends Actor
@@ -18,6 +20,12 @@ package com.pixo.cotizadorclaro.model
 		public static const PHONE_3:Number = 3;
 		public static const PHONE_4:Number = 4;
 		
+		public static const HBO_1:Number = 1;
+		public static const HBO_2:Number = 2;
+		
+		public static const MINIHBO_1:Number = 1;
+		public static const MINIHBO_2:Number = 2;
+		
 		public var stratum:Number = 0;
 		public var city:String = "";
 		
@@ -29,8 +37,8 @@ package com.pixo.cotizadorclaro.model
 		public var decoPVR:Number = 0;
 		public var decoHD:Number = 0;
 		public var decoStandard:Number = 0;
-		public var hbo:Boolean = false;
-		public var miniHbo:Boolean = false;
+		public var hbo:Number = 0;
+		public var miniHbo:Number = 0;
 		public var fox:Boolean = false;
 		public var hotPack:Boolean = false;
 		public var revista15:Boolean = false;
@@ -39,6 +47,8 @@ package com.pixo.cotizadorclaro.model
 		
 		public var phonelines:Number = 0;
 		
+		public var triplePlayCost:CostResults;
+		
 		public function get tv():Boolean
 		{
 			return _tv;
@@ -46,10 +56,6 @@ package com.pixo.cotizadorclaro.model
 		
 		public function set tv(val:Boolean):void
 		{
-			if (val)
-				decoStandard = 1;
-			else
-				decoStandard = 0;
 			_tv = val;
 		}
 		
@@ -95,16 +101,17 @@ package com.pixo.cotizadorclaro.model
 		public function get additionalsJSON():String
 		{
 			var additionalsObject:Object = {};
-			if (hbo) additionalsObject["hbo"] = 1;
-			if (miniHbo) additionalsObject["hbomini"] = 1;
+			if (hbo == 1) additionalsObject["hboclausula"] = 1;
+			if (hbo == 2) additionalsObject["hbo"] = 1;
+			if (miniHbo > 0) additionalsObject["hbomini"] = 1;
 			if (fox) additionalsObject["fox"] = 1;
 			if (hotPack) additionalsObject["hotpack"] = 1;
 			if (revista15) additionalsObject["revista"] = 1;
 			if (decoPVR>0) additionalsObject["pvr1"] = 1;
 			if (decoPVR>1) additionalsObject["pvr2"] = decoPVR-1;
 			if (decoHD>0) additionalsObject["hd1"] = 1;
-			if (decoHD>1) additionalsObject["hd1"] = decoHD-1;
-			if (decoStandard>1) additionalsObject["hd1"] = decoStandard-1;
+			if (decoHD>1) additionalsObject["hd2"] = decoHD-1;
+			if (decoStandard>1) additionalsObject["standard"] = decoStandard-1;
 			if (phone && phonelines>0) additionalsObject["instalaciontel"] = phonelines-1;
 			
 			return JSON.stringify(additionalsObject);

@@ -7,12 +7,15 @@ package com.pixo.cotizadorclaro.service
 		public var phoneCost:Number = 0;
 		public var baseCost:Number = 0;
 		public var promoPrice:Number = 0;
-		public var additionals:Vector.<AdditionalCost> = new Vector.<AdditionalCost>();
+		public var additionals:Object = new Object();
+		public var included:Object = new Object();
 		
 		public function get additionalCosts():Number{
 			var additionalCost:Number = 0;
-			for each(var cost:AdditionalCost in additionals)
-				additionalCost += cost.value;
+			for (var key:String in additionals)
+			{
+				additionalCost += Number(additionals[key]["val"]);
+			}
 			return additionalCost;
 		}
 		

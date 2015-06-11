@@ -45,8 +45,8 @@ package com.pixo.cotizadorclaro.view.component
 			pvr.visible = config.decoPVR > 0; getBadgeText(pvr).text = config.decoPVR+""; adjust(pvr);
 			hd.visible = config.decoHD > 0; getBadgeText(hd).text = config.decoHD+""; adjust(hd);
 			standard.visible = config.decoStandard > 0; getBadgeText(standard).text = config.decoStandard+""; adjust(standard);
-			hbo.visible = config.hbo; adjust(hbo);
-			miniHBO.visible = config.miniHbo; adjust(miniHBO);
+			hbo.visible = config.hbo>0; adjust(hbo);
+			miniHBO.visible = config.miniHbo>0; adjust(miniHBO);
 			fox.visible = config.fox; adjust(fox);
 			hotpack.visible = config.hotPack; adjust(hotpack);
 			r15min.visible = config.revista15; adjust(r15min);

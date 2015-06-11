@@ -3,6 +3,7 @@ package com.pixo.cotizadorclaro.view
 	import com.pixo.cotizadorclaro.controller.events.ConfigEvent;
 	import com.pixo.cotizadorclaro.controller.events.NavEvent;
 	import com.pixo.cotizadorclaro.model.Config;
+	import com.pixo.cotizadorclaro.service.event.GetTriplePlayEvent;
 	import com.pixo.cotizadorclaro.view.base.SelectableButton;
 	
 	import flash.events.Event;
@@ -20,6 +21,12 @@ package com.pixo.cotizadorclaro.view
 		
 		override public function onRegister():void
 		{
+			eventMap.mapListener(eventDispatcher, GetTriplePlayEvent.PLAN_LOADED, handleTriplePlayObtained);
+		}
+		
+		private function handleTriplePlayObtained(e:GetTriplePlayEvent):void
+		{
+			config.triplePlayCost = e.triplePlay;
 			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
 			eventMap.mapListener(view.selectButton, SelectableButton.SELECTED, handleSelected);

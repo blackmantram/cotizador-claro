@@ -77,7 +77,7 @@ package com.pixo.cotizadorclaro.model
 			if (isIn(AppEvent.GO_TO_TRIPLE_PLAY))
 			{
 				if(selectedItems.isTriplePlaySelected)
-					currentNav=GetNavPositionOf(AppEvent.GO_TO_TV);
+					currentNav=GetNavPositionOf(AppEvent.GO_TO_PREVIEW);
 				else
 					currentNav=GetNavPositionOf(AppEvent.GO_TO_SERVICES);
 			}

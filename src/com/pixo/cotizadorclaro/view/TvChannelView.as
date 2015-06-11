@@ -6,6 +6,8 @@ package com.pixo.cotizadorclaro.view
 	import com.pixo.cotizadorclaro.view.base.Slider;
 	import com.pixo.cotizadorclaro.view.component.AdditionalChannelsViewer;
 	import com.pixo.cotizadorclaro.view.component.BasicChannelsViewer;
+	import com.pixo.cotizadorclaro.view.component.HBOSelector;
+	import com.pixo.cotizadorclaro.view.component.MiniHBOSelector;
 	
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -26,11 +28,11 @@ package com.pixo.cotizadorclaro.view
 		[Skinnable]
 		public var channels_hotpack:Sprite;
 		
+		public var hboSelector:HBOSelector;
+		
+		public var minihboSelector:MiniHBOSelector;
+		
 		private var channels:AdditionalChannelsViewer;
-		
-		public var hbo:SelectableButton;
-		
-		public var minihbo:SelectableButton;
 		
 		public var fox:SelectableButton;
 		
@@ -49,8 +51,8 @@ package com.pixo.cotizadorclaro.view
 		
 		private function initializeButtons():void
 		{
-			hbo = new SelectableButton(_skin.getChildByName("hbo") as Sprite);
-			minihbo = new SelectableButton(_skin.getChildByName("minihbo") as Sprite);
+			hboSelector = new HBOSelector(_skin);
+			minihboSelector = new MiniHBOSelector(_skin);
 			fox = new SelectableButton(_skin.getChildByName("fox") as Sprite);
 			hotPack = new SelectableButton(_skin.getChildByName("hotPack") as Sprite);
 			revista15 = new SelectableButton(_skin.getChildByName("revista15") as Sprite);
@@ -58,8 +60,6 @@ package com.pixo.cotizadorclaro.view
 		
 		private function addListeners():void
 		{
-			hbo.addEventListener(SelectableButton.SELECTED, handleHBOSelected);
-			minihbo.addEventListener(SelectableButton.SELECTED, handleMiniHBOSelected);
 			fox.addEventListener(SelectableButton.SELECTED, handleFOXSelected);
 			hotPack.addEventListener(SelectableButton.SELECTED, handleHotPackSelected);
 			revista15.addEventListener(SelectableButton.SELECTED, handleRevista15Selected);
@@ -72,16 +72,6 @@ package com.pixo.cotizadorclaro.view
 		private function showChannels(position:Number):void
 		{
 			channels.show(position);
-		}
-		
-		private function handleHBOSelected(e:Event):void
-		{
-			hbo.toggle();	
-		}
-		
-		private function handleMiniHBOSelected(e:Event):void
-		{
-			minihbo.toggle();	
 		}
 		
 		private function handleFOXSelected(e:Event):void

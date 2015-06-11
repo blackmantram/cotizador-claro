@@ -2,6 +2,7 @@ package com.pixo.cotizadorclaro.controller.commands
 {
 	import com.pixo.cotizadorclaro.model.Config;
 	import com.pixo.cotizadorclaro.service.ICalcCostService;
+	import com.pixo.cotizadorclaro.service.event.CalcCostEvent;
 	
 	import org.robotlegs.mvcs.Command;
 	
@@ -15,7 +16,8 @@ package com.pixo.cotizadorclaro.controller.commands
 		
 		override public function execute():void
 		{
-			calcCostService.getCost(config);
+			if (!config.isTriplePlaySelected)
+				calcCostService.getCost(config);
 		}
 	}
 }

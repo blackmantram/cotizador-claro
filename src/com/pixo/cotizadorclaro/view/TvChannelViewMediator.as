@@ -21,8 +21,8 @@ package com.pixo.cotizadorclaro.view
 		{
 			eventMap.mapListener(view.nextButton, MouseEvent.CLICK, handleNextButton);
 			eventMap.mapListener(view.prevButton, MouseEvent.CLICK, handlePrevButton);
-			eventMap.mapListener(view.hbo, SelectableButton.SELECTED, handleHBOSelected);
-			eventMap.mapListener(view.minihbo, SelectableButton.SELECTED, handleMiniHBOSelected);
+			eventMap.mapListener(view.hboSelector, Event.SELECT, handleHBOSelected);
+			eventMap.mapListener(view.minihboSelector, Event.SELECT, handleMiniHBOSelected);
 			eventMap.mapListener(view.fox, SelectableButton.SELECTED, handleFoxSelected);
 			eventMap.mapListener(view.hotPack, SelectableButton.SELECTED, handleHotPackSelected);
 			eventMap.mapListener(view.revista15, SelectableButton.SELECTED, handleRevista15Selected);
@@ -40,12 +40,12 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleHBOSelected(e:Event):void
 		{
-			config.hbo = !config.hbo;
+			config.hbo = Number(view.hboSelector.selected.name);
 		}
 		
 		private function handleMiniHBOSelected(e:Event):void
 		{
-			config.miniHbo = !config.miniHbo;
+			config.miniHbo = Number(view.minihboSelector.selected.name);
 		}
 		
 		private function handleFoxSelected(e:Event):void
