@@ -25,7 +25,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
 			eventMap.mapListener(view.phone, MouseEvent.CLICK, handlePhoneButton);
 			eventMap.mapListener(eventDispatcher, CalcCostEvent.CALC_LOADED, handleCalcLoaded);
-			if (config.isTriplePlaySelected)
+			if (config.triplePlay)
 				view.setData(config, config.triplePlayCost);
 		}
 		

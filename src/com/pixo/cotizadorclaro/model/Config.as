@@ -47,6 +47,8 @@ package com.pixo.cotizadorclaro.model
 		
 		public var phonelines:Number = 0;
 		
+		public var triplePlay:Boolean = false;
+		
 		public var triplePlayCost:CostResults;
 		
 		public function get tv():Boolean
@@ -81,11 +83,6 @@ package com.pixo.cotizadorclaro.model
 			else
 				phonelines = 0;
 			_phone = val;
-		}
-		
-		public function get isTriplePlaySelected():Boolean
-		{
-			return tv && internet && phone;
 		}
 		
 		public function get hasNothingSelected():Boolean

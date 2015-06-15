@@ -1,6 +1,7 @@
 package com.pixo.cotizadorclaro.view.component.dropdown
 {
 	import com.pixo.cotizadorclaro.controller.commands.boostrap.DropDownItemData;
+	import com.pixo.cotizadorclaro.view.StratumView;
 	
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
@@ -20,6 +21,11 @@ package com.pixo.cotizadorclaro.view.component.dropdown
 		private var dataList:Vector.<DropDownItemData>;
 		private var itemContainer:Sprite;
 		private var mask:Sprite;
+		
+		public function get current():String
+		{
+			return inputField.text;
+		}
 		
 		public function DropDown(skin:Sprite)
 		{

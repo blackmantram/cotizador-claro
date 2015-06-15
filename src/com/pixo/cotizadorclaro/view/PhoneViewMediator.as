@@ -37,7 +37,8 @@ package com.pixo.cotizadorclaro.view
 		
 		private function handleLineSelected(e:Event):void
 		{
-			config.phonelines = view.lineSelector.selected.name as Number;
+			var linesSelected:Number = Number(view.lineSelector.selected.name);
+			config.phonelines =  linesSelected;
 		}
 	}
 }

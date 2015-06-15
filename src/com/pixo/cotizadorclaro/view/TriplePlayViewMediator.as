@@ -40,7 +40,7 @@ package com.pixo.cotizadorclaro.view
 		
 		private function updateStates():void
 		{
-			if (config.isTriplePlaySelected)
+			if (config.triplePlay)
 				view.selectButton.select();
 			else
 				view.selectButton.unselect();

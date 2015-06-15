@@ -27,6 +27,7 @@ package com.pixo.cotizadorclaro.service
 			var url:String = "http://santandercalidad.com/claro_app/cotizador/plandelmes.php?estrato=%s%&ciudad=%c%";
 			url = url.replace("%s%", config.stratum+"");
 			url = url.replace("%c%", config.city+"");
+			trace(url);
 			return url;
 		}
 		

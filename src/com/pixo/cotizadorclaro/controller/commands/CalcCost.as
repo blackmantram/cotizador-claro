@@ -16,7 +16,7 @@ package com.pixo.cotizadorclaro.controller.commands
 		
 		override public function execute():void
 		{
-			if (!config.isTriplePlaySelected)
+			if (!config.triplePlay)
 				calcCostService.getCost(config);
 		}
 	}

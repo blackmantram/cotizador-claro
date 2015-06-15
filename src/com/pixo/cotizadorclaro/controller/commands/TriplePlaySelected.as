@@ -11,18 +11,7 @@ package com.pixo.cotizadorclaro.controller.commands
 		
 		override public function execute():void
 		{
-			if (!selectedItems.isTriplePlaySelected)
-			{
-				selectedItems.phone = true;
-				selectedItems.internet = true;
-				selectedItems.tv = true;
-			}
-			else
-			{
-				selectedItems.phone = false;
-				selectedItems.internet = false;
-				selectedItems.tv = false;
-			}
+			selectedItems.triplePlay = !selectedItems.triplePlay;
 		}
 	}
 }

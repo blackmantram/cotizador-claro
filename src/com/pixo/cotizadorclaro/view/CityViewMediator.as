@@ -25,6 +25,7 @@ package com.pixo.cotizadorclaro.view
 			eventMap.mapListener(eventDispatcher, GetCitiesEvent.CITIES_LOADED, handleCitiesObtained);
 			eventMap.mapListener(view.citySelector, DropDownEvent.ITEM_SELECTED, handleCitySelected);
 			dispatch(new AppEvent(AppEvent.FIRST_TIME_CITIES));
+			config.city = view.citySelector.current;
 		}
 		
 		private function handleNextButton(e:MouseEvent):void
